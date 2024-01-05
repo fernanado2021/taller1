@@ -3,9 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import WelcomeScreen from "../screen/WelcomeScreen";
-import JuegoScreen from "../screen/JuegoScreen";
 import LoginScreen from "../screen/LoginScreen";
-import NivelesScreen from "../screen/NivelesScreen";
 import RegisterScreen from "../screen/RegisterScreen";
 
 const Tab = createBottomTabNavigator();
