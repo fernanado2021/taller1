@@ -5,14 +5,15 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import WelcomeScreen from "../screen/WelcomeScreen";
 import LoginScreen from "../screen/LoginScreen";
 import RegisterScreen from "../screen/RegisterScreen";
+import NivelesScreen from "../screen/NivelesScreen";
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs(){
     return(
         <Tab.Navigator>
-            <Tab.Screen name="Login" component={LoginScreen} options={{ tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="form-textbox" color={color} size={size} />) }}/>
-            <Tab.Screen name="Registro" component={RegisterScreen} options={{ tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="view-list" color={color} size={size} />) }} />
+            <Tab.Screen name="Login" component={LoginScreen} options={{ headerShown: false, tabBarIcon: ({ color, size, }) => (<MaterialCommunityIcons name="form-textbox" color={color} size={size} />) }}/>
+            <Tab.Screen name="Registro" component={RegisterScreen} options={{headerShown: false, tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="view-list" color={color} size={size} />) }} />
     </Tab.Navigator>
     )
 }
