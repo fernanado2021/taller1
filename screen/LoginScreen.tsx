@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet, Image } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebaseConfig';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function LoginScreen() {
+
+
+
+export default function LoginScreen({navigation}:any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -39,6 +41,9 @@ export default function LoginScreen() {
         secureTextEntry
       />
       <Button title="Iniciar Sesión" onPress={handleLogin} />
+      
+      <Text style={styles.letras} >¿No tienes una cuenta?  <Text style={styles.registrate}  onPress={() => navigation.navigate('Registro')}>Regístrate</Text>  </Text>
+     
     </View>
   );
 }
@@ -69,5 +74,12 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     marginBottom: 20,
+  },
+  letras:{
+    marginTop: 10,
+    color: 'white'
+  },
+  registrate:{
+color: '#87CEFA'
   }
 });

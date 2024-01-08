@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, Button, Alert, StyleSheet, Image} from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebaseConfig';
 
-export default function RegisterScreen() {
+export default function RegisterScreen({navigation}:any) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -37,7 +37,11 @@ export default function RegisterScreen() {
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
       />
+      
+
       <Button title="Registrarse" onPress={handleRegister} />
+      <Text style={styles.letras} >¿Ya tienes una cuenta?  <Text style={styles.sesion}  onPress={() => navigation.navigate('Login')}>Inicia Sesión</Text> </Text>
+
     </View>
   );
 }
@@ -69,4 +73,11 @@ const styles = StyleSheet.create({
     height: 100,
     marginBottom: 20,
   },
+  letras:{
+    marginTop: 10,
+    color: 'white'
+  },
+  sesion:{
+color: '#87CEFA',
+  }
 });
